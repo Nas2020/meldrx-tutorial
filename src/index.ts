@@ -18,12 +18,13 @@ app.use('*', async (c, next) => {
     color = chalk.red; // Red for server errors
   }
 
-  console.log(`⬅️ ${c.req.method} ${c.req.path} - ${color(c.res.status)}`);
+  console.log(`⬅️ ${c.req.method} ${c.req.path} ${c.req} - ${color(c.res.status)}`);
 });
+
 
 // Health check endpoint
 app.get('/health', (c) => {
-  return c.json({ status: 'ok', timestamp: new Date() });
+  return c.json({ status: 'Hey Jaffer', timestamp: new Date() });
 });
 
 // Mount the discovery and hooks routers
