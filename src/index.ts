@@ -24,7 +24,7 @@ app.use('*', async (c, next) => {
 
 // Health check endpoint
 app.get('/health', (c) => {
-  return c.json({ status: 'Hey Jaffer', timestamp: new Date() });
+  return c.json({ status: 'Ok', timestamp: new Date() });
 });
 
 // Mount the discovery and hooks routers

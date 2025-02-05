@@ -37,3 +37,5 @@ discoveryRouter.get('/', (c) => {
         return c.json({ error: 'Internal Server Error' }, 500);
     }
 });
+
+//OpenAI API - Pnemue

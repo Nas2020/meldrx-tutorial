@@ -87,7 +87,7 @@ hooksRouter.post('/:id', async (c) => {
           type: 'absolute',
         },
         {
-          label: 'Launch SMART App',
+          label: 'Launch pnemonia Diagnosis App',
           url: 'http://localhost:4434/launch',
           type: 'smart',
         },
@@ -96,9 +96,9 @@ hooksRouter.post('/:id', async (c) => {
       // Build dynamic content for cards
       const cards = [
         {
-          summary: `Hello, ${firstName} ${lastName}`,
+          summary: `Dai, ${firstName} ${lastName}`,
           indicator: 'info',
-          detail: 'Welcome to your patient dashboard!',
+          detail: 'You have pnemonia based on ChatGPT',
           source: commonSource,
           suggestions: commonSuggestions,
           links: commonLinks,
@@ -141,7 +141,7 @@ hooksRouter.post('/:id', async (c) => {
       if (patientAllergies.length > 0) {
         cards.push({
           summary: 'Allergies',
-          indicator: 'critical',
+          indicator: 'info',
           detail: `The patient has allergies to: ${patientAllergies.join(', ')}.`,
           source: {
             label: 'Allergies CDS Service',
@@ -165,7 +165,7 @@ hooksRouter.post('/:id', async (c) => {
           cards: [
               {
                   summary: 'Clinical Recommendations',
-                  indicator: 'warning',
+                  indicator: 'info',
                   detail: `The patient has the following active conditions: ${activeConditions.join(', ')}.`,
                   source: {
                       label: 'Clinical Recommendations Service',
